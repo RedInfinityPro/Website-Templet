@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <title>RedInfinity_Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="src\styles.css">
+</head>
+
+<body>
+    <header>
+        <dav class="clock-container">
+            <span id="clock"></span>
+        </dav>
+        <hr>
+        <div class="headline-container">
+            <h1 id="website-title"></h1>
+        </div>
+
+        <div class="nav-container">
+            <div class="button-row">
+                <button class="button-style">Subscribe</button>
+                <button class="button-style">Learn More</button>
+            </div>
+            <div class="button-row">
+                <button class="button-style">Careers</button>
+                <button class="button-style">Contact</button>
+            </div>
+            <div class="button-row">
+                <button class="button-style">About</button>
+                <button class="button-style">Store</button>
+            </div>
+        </div>
+        <hr>
+    </header>
+    
+    <div class="container">
+        <input id="searchbar" onkeyup="search_elements()" type="text" name="search" placeholder="Search...">
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Sort by:</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#">New</a>
+                <a href="#">Popular</a>
+                <a href="#">Unpopular</a>
+                <a href="#">Old</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-content">
+        <button class="responsive-button">
+            <img src="assets\add-button.png" alt="Button image" class="button-image">
+            <div class="button-content">
+                <span id="button-clock"></span>
+                <h3 class="button-title">Add new post</h3>
+                <p class="button-summary">This is a sample description that explains what this button does. The text will wrap to multiple lines if it gets too long, and the button will expand vertically to accommodate it.</p>
+            </div>
+        </button>
+    </div>
+
+    <div id="articleForm" class="popup-form">
+        <div class="form-container">
+            <span class="close-btn" onclick="closeForm('articleForm')">&times;</span>
+            <h2 id="popup-articleTitle"></h2>
+            <p id="popup-articleContents"></p>
+        </div>
+    </div>
+
+    <div id="createForm" class="popup-form">
+        <div class="form-container">
+            <span class="close-btn" onclick="closeForm('createForm')">&times;</span>
+            <h2>Post</h2>
+            <div class="container">
+                <input id="articleTitle" onkeyup="articleTitle()" type="text" name="articleTitle" placeholder="Article Title...">
+            </div>
+            <p id='summary'></p>
+            <textarea id="enter-text" class="no-resize" rows="5" cols="50" placeholder="Enter your text here..."></textarea>
+            <button class="button-style" onclick="updateSummary()">Post</button>
+        </div>
+    </div>
+    
+    <div class="sticky-bottom">
+        <button id='post' class="button-style" onclick="create_openForm()">Make Post</button>
+    </div>
+
+    <script src="src\main.js"></script>
+</body>
